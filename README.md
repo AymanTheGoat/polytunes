@@ -1,7 +1,7 @@
 # PolyTunes
 ### _The best Polybar Script, Ever._
 
-PolyTunes is a Polybar script for controlling Spotify player playback and displaying current song information with options to scroll metadata, such as the artist and song title.
+PolyTunes is a Polybar script that allows you to control Spotify playback and display the current song information, with the option to truncate and scroll the artist name and song title.
 
 ### Features
 
@@ -12,8 +12,6 @@ PolyTunes is a Polybar script for controlling Spotify player playback and displa
 
 As Gerard Way says :
 > "Remember the first time you went to a show and saw your favorite band. You wore their shirt, and sang every word. You didn't know anything about scene politics, haircuts, or what was cool. All you knew was that this music made you feel different from anyone you shared a locker with. Someone finally understood you. This is what music is about."
-
-
 
 ### Installation
 PolyTunes requires D-Bus as it is used to communicate with Spotify media player.
@@ -32,7 +30,7 @@ you can find more info in [Get dart SDK](https://dart.dev/get-dart)
 Clone the repository...
 ```sh
 git clone https://github.com/AymanTheGoat/polytunes.git
-cd poly_tunes
+cd polytunes
 ```
 
 Get the dependencies...
@@ -83,6 +81,8 @@ type = custom/script
 exec = echo " 󰏥 "
 click-left = [polytunes path] spotify playpause
 ```
+![Screenshot](https://github.com/user-attachments/assets/ad725b8a-ef8b-4f6b-8fbc-f5bd7badccb6)
+
 
 Or if you prefer to click song name to toggle playback you can do something like this
 ```ini
@@ -105,6 +105,8 @@ type = custom/script
 exec = echo "󰙡 "
 click-left = [polytunes path] spotify next
 ```
+![Screenshot](https://github.com/user-attachments/assets/c8da839c-2af9-4de2-b96e-3bc0400557f5)
+
 Examples used here are using default Polybar config with separator removed, feel free to customize it to your liking.
 
 ##### Tips
@@ -114,6 +116,10 @@ Examples used here are using default Polybar config with separator removed, feel
  - Use a fallback font for launguages like Japanese, Arabic...
  - You can change Scroll format in source code in methods at line 85 to better fit your preferences
  - Use [polytunes path] -h for advanced usage
+
+### Issues
+If you run into any issues open a new issue or contact me in discord : `.wp5`
+
 ### License
 
 MIT
