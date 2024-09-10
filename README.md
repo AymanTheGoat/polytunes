@@ -14,8 +14,6 @@ As Gerard Way says :
 > "Remember the first time you went to a show and saw your favorite band. You wore their shirt, and sang every word. You didn't know anything about scene politics, haircuts, or what was cool. All you knew was that this music made you feel different from anyone you shared a locker with. Someone finally understood you. This is what music is about."
 
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
 
 ### Build from source
 
