@@ -105,7 +105,7 @@ type = custom/script
 exec = echo "󰙡 "
 click-left = [polytunes path] spotify next
 ```
-![Screenshot](https://github.com/user-attachments/assets/c8da839c-2af9-4de2-b96e-3bc0400557f5)
+![Screenshot](https://github.com/user-attachments/assets/82bae52a-9fdf-46a6-bfb6-3b577680bb3c)
 
 Examples used here are using default Polybar config with separator removed, feel free to customize it to your liking.
 
