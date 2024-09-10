@@ -3,7 +3,7 @@ import 'package:args/command_runner.dart';
 import 'package:dbus/dbus.dart';
 import 'package:polytunes/methods.dart';
 
-// Main function that sets up the CommandRunner
+// Main function 
 Future<void> main(List<String> args) async {
   final DBusClient client = DBusClient.session();
   final DBusRemoteObject player = DBusRemoteObject(
