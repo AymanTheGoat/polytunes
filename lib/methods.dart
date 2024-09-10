@@ -5,7 +5,6 @@ import 'dart:async';
 import 'package:dbus/dbus.dart';
 
 // Function to control Next
-
 Future<void> playPause(DBusRemoteObject player) async {
   await player.callMethod(
     'org.mpris.MediaPlayer2.Player',
@@ -65,15 +64,13 @@ Future<String> getArtistName(DBusRemoteObject player) async {
 
 // Function to continuously scroll the song metadata
 void scrollMetaData(DBusRemoteObject player, {int displayLength = 10, int intervalSeconds = 1, int spacing = 10}) {
-  int startIndex = 0; // Start scrolling from the first character
-  String lastText = ''; // Keep track of the last displayed text to detect changes
+  int startIndex = 0; 
+  String lastText = ''; 
 
   Timer.periodic(Duration(seconds: intervalSeconds), (Timer timer) async {
-    // Fetch the current playback status
     final String playbackStatus = await getPlaybackStatus(player);
 
     if (playbackStatus == 'Playing') {
-      // Fetch the current metadata
       final String artist = await getArtistName(player);
       final String songName = await getSongName(player);
       
@@ -85,37 +82,31 @@ void scrollMetaData(DBusRemoteObject player, {int displayLength = 10, int interv
         unspacedText = songName;
       }
       else {
-        unspacedText = "$artist - $songName";
+        unspacedText = "$artist - $songName"; // Feel free to change this format to your liking 
       }
       
-      // Combine artist and song name into a single text string
       final String text = "$unspacedText${' ' * spacing}";
       final int textLength = text.length;
 
-      // Reset startIndex if text has changed
       if (text != lastText) {
         startIndex = 0;
-        lastText = text; // Update lastText to the current text
+        lastText = text;
       }
 
-      // Check if text length is less than or equal to displayLength
+      // Check if text length is less than or equal to displayLength if so, don't scroll
       if (unspacedText.length <= displayLength) {
-        // Print the full text without scrolling
+        // Print without scrolling
         print(text);
       } else {
-        // Calculate the end index of the substring
+        // Print with scrolling
         int endIndex = startIndex + displayLength;
 
-        // Handle the wrapping around of the text for scrolling effect
         if (endIndex > textLength) {
-          // Wrap around and concatenate the overflowing part from the start of the text
           print(text.substring(startIndex) + text.substring(0, endIndex % textLength));
         } else {
-          // Print the current slice of the text
           print(text.substring(startIndex, endIndex));
         }
 
-        // Increment the start index for the next scroll
         startIndex = (startIndex + 1) % textLength;
       }
     }

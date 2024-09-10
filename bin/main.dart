@@ -24,8 +24,6 @@ Future<void> main(List<String> args) async {
   }
 }
 
-
-// Command for media control (play/pause, next, previous, status, artist, song)
 class MediaControlCommands extends Command {
   final DBusRemoteObject player;
 
