@@ -96,7 +96,7 @@ void scrollMetaData(DBusRemoteObject player, {int displayLength = 10, int interv
       // Check if text length is less than or equal to displayLength if so, don't scroll
       if (unspacedText.length <= displayLength) {
         // Print without scrolling
-        print(text);
+        print(unspacedText);
       } else {
         // Print with scrolling
         int endIndex = startIndex + displayLength;
